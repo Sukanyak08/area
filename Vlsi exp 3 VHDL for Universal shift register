@@ -1,0 +1,89 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity usr is
+      Port( clk,rst: in std_logic;    s:
+in std_logic_vector(3 downto 0);
+                    m: in std_logic_vector(1 downto 0);
+                    y: out std_logic_vector(3 downto 0)); end
+usr;
+
+architecture Behavioral of usr is
+
+signal t: std_logic_vector(3 downto 0); 
+begin process(clk,rst)
+            begin
+            
+            if rst = '1' then
+                      y <= "0000";
+                      
+            elsif clk'event and clk = '1' then
+            
+            case(m) is
+            
+                when "00" =>       --SISO
+                      t(3) <= s(0); -- LSB as input
+                                      S(0)
+                                  t(2)
+                      <=t(3);
+                            t(1) <= t(2);
+                                 t(0) <= t(1);
+                                      y(0) <= t(0); --LSB as output
+                                                  Y(0)
+                                                  
+                            when "01" =>          -- SIPO
+                            t(3) <=s(0);          -- LSB as Input
+                                                  S(0)
+                                      t(2)
+                       
+                       <=t(3);
+                             t(1) <= t(2);
+                                   t(0) <= t(1);
+                                         y<= t;   -- 4bit output Y
+                                         
+                                 output Y(0) <=   -- LSB
+                                 S(0)
+                                 
+                                 
+                                 when "10" =>     --PIPO
+                                 
+                                    t <= s;
+                                    y<= t;
+                                when "11" =>
+                                
+                                    t<= s;
+                                    
+   t(2) <= t(3);
+            t(1)<=
+   t(2);
+        t(0)<=t(1);
+                        y(3)<= t(0);
+                        
+                        
+              when others => NULL;
+              
+                end case;
+                
+              end if;
+              end process;
+              end Behavioral;
+              
+              
+TEST BENCH
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY usr2_tb IS
+END usr2_tb;
+
+ARCHITECTURE behavior OF usr2_tb IS
+
+     COMPONENT usr
+PORT(
+    clk : IN std_logic;
+rst: IN std_logic;
+    S: IN std_logic_vector(3 downto 0);
+m: IN std_logic_vector(1 downto 0);
+    y: OUT std_logic_vector(3 downto 0)
+    ):

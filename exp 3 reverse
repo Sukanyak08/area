@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Program</title>
+</head>
+<body>
+    <div>
+        <h1>Reverse String</h1>
+        <label for="">string: </label>
+        <input type="text" placeholder="enter a string here" id="str1">
+        <button onclick="getReverse()">Submit</button>
+        <h3>Reverse String is: <span id="result1"></span></h3>
+        
+        <h1>Replace character of a String</h1>
+        <label for="">string: </label>
+        <input type="text" placeholder="enter a string here" id="str2">
+        <label for="">character which we want to Replace: </label>
+        <input type="text" id="str3">
+        <label for="">character which we want to Replace: </label>
+        <input type="text" id="str4">
+        <button onclick="getReplaceString()">Submit</button>
+        <h3>new String is: <span id="result2"></span></h3>
+
+        <h1>String Palindrome</h1>
+        <label for="">string: </label>
+        <input type="text" placeholder="enter a string here" id="str5">
+        <button onclick="getPalindrome()">Submit</button>
+        <h3>it is <span id="result3"></span></h3>
+    </div>
+    <script src="./third.js"></script>
+</body>
+</html>
+
+function getReverse(){
+    
+    const str1 = document.getElementById("str1").value;
+     
+    let revStr = "";
+    for(let i = 0; i < str1.length; i++)
+    {
+        revStr += str1.charAt(str1.length - i - 1);
+    }
+
+    document.getElementById("result1").innerHTML = revStr;
+}
+
+function getReplaceString(){
+    
+    const str2 = document.getElementById("str2").value;
+    const str3 = document.getElementById("str3").value;
+    const str4 = document.getElementById("str4").value;
+
+    const newStr = str2.replace(str3, str4);
+    document.getElementById("result2").innerHTML = newStr;
+}
+
+function getPalindrome(){
+    
+    const str5 = document.getElementById("str5").value;
+     
+    let revStr2 = "";
+    for(let j = 0; j < str5.length; j++)
+    {
+        revStr2 += str5.charAt(str5.length - j - 1);
+    }
+
+    if(revStr2 === str5){
+        document.getElementById("result3").innerHTML = "a palindrome";
+    }
+    else{
+        document.getElementById("result3").innerHTML = "not a palindrome";
+    }
+}

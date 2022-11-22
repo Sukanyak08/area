@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<body>
+    <div>
+        <h1>Calculater</h1>
+        <label for="">number1:</label>
+        <input type="text" id="num1">
+        <label for="">number2:</label>
+        <input type="text" id="num2">
+        <br>
+        <br>
+        <button onclick="add()">Addition</button>
+        <button onclick="sub()">Subtraction</button>
+        <button onclick="mul()">multiplication</button>
+        <button onclick="div()">division</button>
+        <br>
+        <h2>Result: <span id="result"></span></h2>
+    </div>
+    <script src="./nine.js"></script>
+</body>
+</html>
+
+function add(){
+
+    const num1 = parseInt(document.getElementById("num1").value);
+    const num2 = parseInt(document.getElementById("num2").value);
+
+    const res1 = num1 + num2;
+    document.getElementById("result").innerHTML = res1;
+}
+
+function sub(){
+
+    const num1 = parseInt(document.getElementById("num1").value);
+    const num2 = parseInt(document.getElementById("num2").value);
+
+    const res1 = num1 - num2;
+    document.getElementById("result").innerHTML = res1;
+}
+
+function mul(){
+
+    const num1 = parseInt(document.getElementById("num1").value);
+    const num2 = parseInt(document.getElementById("num2").value);
+
+    const res1 = num1 * num2;
+    document.getElementById("result").innerHTML = res1;
+}
+
+function div(){
+
+    const num1 = parseInt(document.getElementById("num1").value);
+    const num2 = parseInt(document.getElementById("num2").value);
+
+    if(num2==0)
+    {
+        let  res = "infinite"
+        document.getElementById("result").innerHTML = res;
+    }
+    else{
+        const res1 = num1 / num2;
+        document.getElementById("result").innerHTML = res1;
+    } 
+}

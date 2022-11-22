@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Of Tringle</title>
+</head>
+<body>
+    <div>
+        <h1>Area of Tringle</h1>
+        <label for="">Base of Tringle:</label>
+        <input type="text" id="base">
+        <br>
+        <label for="">height of Tringle:</label>
+        <input type="text" id="height">
+        <button onclick="getAreaOfTringle()">Submit</button>
+        <br>
+        <h2>Area of Tringle is: <span id="result"></span></h2>
+    </div>
+    
+    <div>
+        <h1>Area Of Rectangle</h1>
+        <label for="">Length of Rect: </label>
+        <input type="text" id="length">
+        <br>
+        <label for="">Width of Rect: </label>
+        <input type="text" id="Width">
+        <button onclick="getAreaOfRect()">Submit</button>
+        <h2>Area Of Rectangle: <span id="result"></span></h2>
+    </div>
+    
+    <div>
+        <h1>Area of Circle</h1>
+        <label for="">Radius of Circle:</label>
+        <input type="text" id="radius">
+        <button onclick="getAreaOfCircle()">Submit</button>
+        <br>
+        <h2>Area of Circle is: <span id="result"></span></h2>
+    </div>
+    <script src="./First.js"></script>
+</body>
+</html>
+
+function getAreaOfTringle(){
+
+    const base = parseInt(document.getElementById("base").value);
+    const height = parseInt(document.getElementById("height").value);
+
+    const area = 0.5 * base * height;
+    document.getElementById("result").innerHTML = area;
+}
+
+function getAreaOfRect(){
+
+    const length = parseInt(document.getElementById("length").value);
+    const width = parseInt(document.getElementById("Width").value);
+
+    area = length * width;
+    document.getElementById("result").innerHTML = area;
+}
+
+function getAreaOfCircle(){
+
+    const radius = parseInt(document.getElementById("radius").value);
+
+    const area = 3.14 * radius * radius;
+    document.getElementById("result").innerHTML = area;
+}

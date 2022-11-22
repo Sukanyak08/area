@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+      }
+      .btn {
+        grid-column: 1/3;
+      }
+    </style>
+    <title>Student information form</title>
+  </head>
+  <body>
+    <section class="main">
+      <form class="grid" method="post" onsubmit="return validate()">
+        <span> Enter Name: </span>
+        <input type="text" name="fullName" id="fullName" />
+        <span>Enter Mobile No:</span>
+        <input type="tel" name="mobile" id="mobile" />
+        <span> Enter Email Id:</span>
+        <input type="text" name="email" id="email" />
+        <button class="btn">Submit</button>
+      </form>
+    </section>
+    <script src="./ten.js"></script>
+  </body>
+</html>
+
+function validate() {
+    const fullName = document.getElementById("fullName").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
+  
+    if (fullName === "") {
+      alert("name should not be black");
+    }
+    if (mobile === "") {
+      alert("mobile no. should not be black");
+    }
+    if (email === "") {
+      alert("email should not be black");
+    }
+  
+    if (fullName.split(" ").length !== 2) {
+      alert("Please enter your full name");
+      return false;
+    }
+  
+    if (mobile.length !== 10) {
+      alert("Wrong Mobile no please recheck");
+      return false;
+    }
+    alert("Data submitted successfully");
+  }
+  
